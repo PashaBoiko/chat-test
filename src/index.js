@@ -10,7 +10,7 @@ const app = express();
 const server = http.createServer(app);
 const io = socketIo(server);
 
-const PORT = 3000;
+const PORT = 3000 || env.port;
 
 const publicFolderPath = path.join(__dirname, '../public');
 
