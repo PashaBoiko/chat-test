@@ -10,7 +10,7 @@ const app = express();
 const server = http.createServer(app);
 const io = socketIo(server);
 
-const PORT = 3000 || env.port;
+const port = process.env.PORT || 3000;
 
 const publicFolderPath = path.join(__dirname, '../public');
 
@@ -76,5 +76,5 @@ io.on('connection', (socket) => {
 });
 
 server.listen(PORT, () => {
-   console.log("Server is listened by port ", PORT);
+   console.log("Server is listened by port ", port);
 });
